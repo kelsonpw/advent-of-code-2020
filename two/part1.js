@@ -12,4 +12,14 @@ const inputs = fs
     return { low, high, letter, password };
   });
 
-console.log(inputs);
+function solution(data) {
+  return data.reduce((acc, { low, high, letter, password }) => {
+    const count = [...password].filter((s) => s === letter).length;
+    const matches = count >= low && count <= high;
+    return acc + (matches ? 1 : 0);
+  }, 0);
+}
+
+console.log(solution(inputs));
+
+module.exports = { inputs };
