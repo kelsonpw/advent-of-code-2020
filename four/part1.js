@@ -24,4 +24,4 @@ function solution(input) {
 
 console.log(solution(inputs));
 
-module.exports = { inputs, REQUIRED };
+module.exports = { inputs };
