@@ -11,15 +11,15 @@ function solution(input) {
     {}
   );
 
-  const [rowWithSeven] = Object.values(rowGroups).filter(
+  const rowWithSevenSeats = Object.values(rowGroups).find(
     (group) => group.length === 7
   );
 
   const seatTotal = Array.from(Array(8).keys()).reduce((acc, v) => acc + v, 0);
 
-  const rowSeatTotal = rowWithSeven.reduce((acc, { col }) => acc + col, 0);
+  const rowSeatTotal = rowWithSevenSeats.reduce((acc, { col }) => acc + col, 0);
 
-  const { row } = rowWithSeven[0];
+  const { row } = rowWithSevenSeats[0];
   const col = seatTotal - rowSeatTotal;
 
   return row * 8 + col;
